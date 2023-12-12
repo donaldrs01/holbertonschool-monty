@@ -43,10 +43,11 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			exit(EXIT_FAILURE);
 		}
-		free(line);
 		line = NULL;
 		len = 0;
 	}
+
+	free(line);
 
 	while (stack != NULL)
 	{
